@@ -1,0 +1,33 @@
+<h1>Listing directores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @directores.each do |director| %>
+      <tr>
+        <td><%= director.nombre %></td>
+        <td><%= director.apellido %></td>
+        <td><%= director.direccion %></td>
+        <td><%= director.telefono %></td>
+        <td><%= link_to 'Show', director %></td>
+        <td><%= link_to 'Edit', edit_director_path(director) %></td>
+        <td><%= link_to 'Destroy', director, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Director', new_director_path %>

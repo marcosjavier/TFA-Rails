@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @director.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @director.apellido %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @director.direccion %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @director.telefono %>
+</p>
+
+<%= link_to 'Edit', edit_director_path(@director) %> |
+<%= link_to 'Back', directores_path %>

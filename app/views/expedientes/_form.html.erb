@@ -1,0 +1,73 @@
+<%= form_for(@expediente) do |f| %>
+  <% if @expediente.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@expediente.errors.count, "error") %> Este expediente no puede guardase si no completa todos los campos </h2>
+
+      <ul>
+      <% @expediente.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :fecha %><br>
+    <%= f.text_field :fecha %><br>  
+  </div>
+  <div class="field">
+    <%=f.label :numero_de_expedientes %><br>
+    <%=f.text_field :numero_expediente %> <br>  
+  </div>
+  
+  <h3>Alumno</h3>
+  <%= f.fields_for :alumno_attributes, @expediente.alumno do |a| %>
+
+      <div class="field">
+        <%= a.label :nombre %><br>
+        <%= a.text_field :nombre %>
+      </div>
+      <div class="field">
+        <%= a.label :apellido %><br>
+        <%= a.text_field :apellido %>
+      </div>
+      <div class="field">
+        <%= a.label :dni %><br>
+        <%= a.text_field :dni %>
+      </div>
+      <div class="field">
+        <%=a.label :telefono %><br>
+        <%=a.text_field :telefono %>
+      </div>
+      <div class="field">
+        <%=a.label :direccion %><br>
+        <%=a.text_field :direccion %>
+      </div>
+  <% end %>
+  <h3> Director</h3>
+  <%=f.fields_for :director_attributes, @expediente.director do |a| %>
+       
+       <div class="field">
+        <%= a.label :nombre %><br>
+        <%= a.text_field :nombre %>
+       </div>
+       <div class="field">
+        <%= a.label :apellido %><br>
+        <%= a.text_field :apellido %>
+       </div>
+       <div class="field">
+        <%= a.label :telefono %><br>
+        <%= a.text_field :telefono %>
+       </div>
+       <div class="field">
+        <%= a.label :direccion %><br>
+        <%= a.text_field :direccion %>
+      </div>
+
+  <%end%>
+  
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

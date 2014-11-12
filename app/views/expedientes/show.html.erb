@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+
+  <%= @expediente.fecha %> </br>
+  <strong> Numero de Expediente </strong>
+  <%= @expediente.numero_expediente%> </br>
+  <h3>Alumno</h3>
+  <%= @expediente.alumno.nombre %> </br>
+  <%= @expediente.alumno.apellido %> </br>
+  <%= @expediente.alumno.dni %> </br>
+  <%= @expediente.alumno.telefono %> </br>
+  <h3>Director</h3>
+  <%= @expediente.director.nombre %> </br>
+  <%= @expediente.director.apellido %> </br>
+  <%= @expediente.director.telefono %> </br>
+  <% @expediente.director.direccion%>
+
+
+</p>
+
+<%= link_to 'Edit', edit_expediente_path(@expediente) %> |
+<%= link_to 'Back', expedientes_path %>

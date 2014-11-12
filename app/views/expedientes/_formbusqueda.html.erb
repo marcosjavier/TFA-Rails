@@ -1,0 +1,8 @@
+<h1>Busqueda de Expediente</h1>
+<p>Ingrese el numero de expediente a buscar</p>
+<p></p>
+<%= form_tag :action => 'buscar_expediente' do %>
+
+<%=text_field_tag 'numero'%>
+<%=submit_tag 'Enviar'%>
+<%end%>

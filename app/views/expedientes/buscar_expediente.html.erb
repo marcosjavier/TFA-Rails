@@ -1,0 +1,18 @@
+<%= render 'formbusqueda' %>
+
+  <% if @expediente %> 
+     <%=@expediente.numero_expediente%>
+     <%=@expediente.fecha%>
+     <%= @expediente.alumno.nombre %> </br>
+     <%= @expediente.alumno.apellido %> </br>
+     <%= @expediente.alumno.dni %> </br>
+     <%= @expediente.alumno.telefono %> </br>
+     <h3>Director</h3>
+     <%= @expediente.director.nombre %> </br>
+     <%= @expediente.director.apellido %> </br>
+     <%= @expediente.director.telefono %> </br>
+     <% @expediente.director.direccion%>
+     <%elsif params[:numero]%>
+       <p>el expediente no existe</p>      
+  <%end%>
+  

@@ -1,0 +1,28 @@
+<h1>Listado de expedientes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Numero de expediente</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @expedientes.each do |expediente| %>
+      <tr>
+        <td><%= expediente.fecha %></td>
+        <td><%= expediente.numero_expediente %></td>
+        <td><%= link_to 'Show', expediente %></td>
+        <td><%= link_to 'Edit', edit_expediente_path(expediente) %></td>
+        <td><%= link_to 'Destroy', expediente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Expediente', new_expediente_path %>
