@@ -1,0 +1,19 @@
+<h1>Expedientes iniciados por el Alumno:</h1>
+<%=@alumno.nombre %>
+<%=@alumno.apellido %> </br>
+
+DNI:<%=@alumno.dni%></br>
+<% @expedientes.each do |expediente| %>
+  <%= expediente.id %> <br>
+  Fecha: <%= expediente.fecha %> <br>
+  Alumno: <%= expediente.alumno.nombre %> <br>
+  Apellido:<%= expediente.alumno.apellido %> <br>
+  Dni:        <%= expediente.alumno.dni %> <br>
+  Telefono: <%= expediente.alumno.telefono %> <br>
+  Direccion: <%= expediente.alumno.direccion %> <br>
+<% end %>
+<% if @alumno.expedientes.empty? %> 
+ <p>Este alumno no tiene expedientes iniciados</p>
+ 
+
+<% end %>

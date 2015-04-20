@@ -24,6 +24,11 @@
         <td><%= link_to 'Show', alumno %></td>
         <td><%= link_to 'Edit', edit_alumno_path(alumno) %></td>
         <td><%= link_to 'Destroy', alumno, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Expedientes', listar_expedientes_alumno_path(alumno) %></td>
+        
+
+
+          
       </tr>
     <% end %>
   </tbody>

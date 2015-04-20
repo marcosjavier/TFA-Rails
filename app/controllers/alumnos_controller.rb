@@ -5,11 +5,13 @@ class AlumnosController < ApplicationController
   # GET /alumnos.json
   def index
     @alumnos = Alumno.all
+
   end
 
   # GET /alumnos/1
   # GET /alumnos/1.json
   def show 
+    
   end
 
   # GET /alumnos/new
@@ -59,6 +61,14 @@ class AlumnosController < ApplicationController
       format.html { redirect_to alumnos_url }
       format.json { head :no_content }
     end
+  end
+
+  #buscar un alumno cualquiera
+  def listar_expedientes
+    @alumno=Alumno.find params[:id]
+    @expedientes=@alumno.expedientes
+    
+    
   end
 
   private

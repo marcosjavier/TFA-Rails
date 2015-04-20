@@ -22,6 +22,9 @@ Expedientes::Application.routes.draw do
   
   
   resources :alumnos do
+    member do 
+      get :listar_expedientes
+    end
     resources :expedientes
   end
    #get 'expediente', to: :buscar_expedientes
