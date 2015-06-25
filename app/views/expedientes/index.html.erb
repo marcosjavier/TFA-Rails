@@ -13,11 +13,11 @@
   <tbody>
     <% @expedientes.each do |expediente| %>
       <tr>
-        <td><%= expediente.fecha %></td>
+        <td><%= format_fecha(expediente.fecha) %></td>
         <td><%= expediente.numero_expediente %></td>
-        <td><%= link_to 'Show', expediente %></td>
-        <td><%= link_to 'Edit', edit_expediente_path(expediente) %></td>
-        <td><%= link_to 'Destroy', expediente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', expediente %></td>
+        <td><%= link_to 'Editar', edit_expediente_path(expediente) %></td>
+        <td><%= link_to 'Borrar', expediente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -25,4 +25,5 @@
 
 <br>
 
-<%= link_to 'New Expediente', new_expediente_path %>
+<%= link_to 'Nuevo Expediente', new_expediente_path %> <br>
+<%= link_to 'Atras', root_path  %> <br>

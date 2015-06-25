@@ -1,4 +1,4 @@
-class Alumno < ActiveRecord::Base
+	class Alumno < ActiveRecord::Base
 	has_many :expedientes
 
     #validación de alumno

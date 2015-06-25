@@ -8,5 +8,5 @@ class Expediente < ActiveRecord::Base
 	delegate :nombre, to: :alumno,  prefix: true, allow_nil: true 
    
     #validación de fecha
-    validates :fecha, :presence => {:message =>"Debe ingresar una fecha"}
+    #validates :fecha, :presence => {:message =>"Debe ingresar una fecha"}
 end

@@ -21,9 +21,9 @@
         <td><%= alumno.dni %></td>
         <td><%= alumno.telefono %></td>
         <td><%= alumno.direccion %></td>
-        <td><%= link_to 'Show', alumno %></td>
-        <td><%= link_to 'Edit', edit_alumno_path(alumno) %></td>
-        <td><%= link_to 'Destroy', alumno, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', alumno %></td>
+        <td><%= link_to 'Editar', edit_alumno_path(alumno) %></td>
+        <td><%= link_to 'Borrar', alumno, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Expedientes', listar_expedientes_alumno_path(alumno) %></td>
         
 
@@ -36,4 +36,5 @@
 
 <br>
 
-<%= link_to 'New Alumno', new_alumno_path %>
+<%= link_to 'Nuevo Alumno', new_alumno_path %> <br>
+<%= link_to 'Atras', root_path %>

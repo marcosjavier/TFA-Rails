@@ -17,6 +17,8 @@ class ExpedientesController < ApplicationController
   # GET /expedientes/new
   def new
     @expediente = Expediente.new
+    
+    
     @expediente.build_alumno
     @expediente.build_director
   end
@@ -29,7 +31,12 @@ class ExpedientesController < ApplicationController
   # POST /expedientes
   # POST /expedientes.json
   def create
-    @expediente = Expediente.new(expediente_params)     
+    @expediente = Expediente.new(expediente_params)      
+    fecha=Date.current
+    @expediente.fecha=fecha.strftime("%d-%m-%Y")
+    
+    
+
     
 
     respond_to do |format|
@@ -67,15 +74,23 @@ class ExpedientesController < ApplicationController
     end
   end
 
+  def form_busqueda
+    
+  end
+
   
   def buscar_expediente
 
-     
-    if params[:numero]
+     if params[:numero]
       @expediente=Expediente.find_by(numero_expediente: params[:numero])
-    end
+     end
+    #f params[:numero]
+      #@expediente=Expediente.where("numero_expediente = ?", params[:numero])
+      
+    #end
     
   end
+
   
 
 
@@ -87,7 +102,7 @@ class ExpedientesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expediente_params
-      params.require(:expediente).permit(:fecha,:numero_expediente, :alumno_attributes =>[:nombre, :apellido, :dni,:telefono,:direccion],
+      params.require(:expediente).permit(:numero_expediente, :alumno_attributes =>[:nombre, :apellido, :dni,:telefono,:direccion],
         :director_attributes =>[:nombre, :apellido, :dni, :telefono, :direccion])
     end
 end

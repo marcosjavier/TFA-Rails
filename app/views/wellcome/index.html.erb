@@ -1,20 +1,20 @@
 
-<h1>Bienvenido a la Aplicación</h1>
-<h2>Extension Universitaria</h2>
+<p><h1>Bienvenido a la Aplicación</h1></p>
+<p><h2>Extension Universitaria</h2></p>
 <p> <h3>Sistema de manejo de pasantías </h3> </p>
 <table>
 	<tr>
-		<td><%= link_to 'Agregar Expediente', {:controller => 'expedientes', :action => 'new'}  %></td>
+		<td><%= link_to 'Agregar Expediente', new_expediente_path  %></td>
 		<td>
-			<%= link_to "Buscar expediente", {:controller =>'expedientes',:action=> 'buscar_expediente'}%>
+			<%= link_to 'Buscar expediente', form_busqueda_path %>
 		</td>
-		<td><%= link_to 'Mostrar  Expedientes', {:controller => 'expedientes', :action => 'index'}%></td>
+		<td><%= link_to 'Mostrar  Expedientes', expedientes_path %></td>
 
-		<td><%= link_to 'Alumnos', {:controller => 'alumnos', :action => 'index'} %></td>
+		<td><%= link_to 'Alumnos', alumnos_path %></td>
 
 		
 	
-		<td><%= link_to 'Directores', {:controller =>'directores', :action =>'index'}%></td>
+		<td><%= link_to 'Directores', directores_path %></td>
 		
 	</tr>
 </table>

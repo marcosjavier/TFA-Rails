@@ -20,9 +20,9 @@
         <td><%= director.apellido %></td>
         <td><%= director.direccion %></td>
         <td><%= director.telefono %></td>
-        <td><%= link_to 'Show', director %></td>
-        <td><%= link_to 'Edit', edit_director_path(director) %></td>
-        <td><%= link_to 'Destroy', director, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', director %></td>
+        <td><%= link_to 'Editar', edit_director_path(director) %></td>
+        <td><%= link_to 'Borrar', director, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,5 @@
 
 <br>
 
-<%= link_to 'New Director', new_director_path %>
+<%= link_to 'Nuevo Director', new_director_path %><br>
+<%= link_to 'Atras', root_path  %> <br>
