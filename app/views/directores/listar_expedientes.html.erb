@@ -1,0 +1,21 @@
+<h1>Expedientes iniciados por el Alumno:</h1>
+<%=@director.nombre %>
+<%=@director.apellido %> </br>
+
+<% @expedientes.each do |expediente| %>
+  <%= expediente.id %> <br>
+  Fecha: <%= expediente.fecha %> <br>
+  Alumno: <%= expediente.director.nombre %> <br>
+  Apellido:<%= expediente.director.apellido %> <br>
+ 
+  Telefono: <%= expediente.director.telefono %> <br>
+  Direccion: <%= expediente.director.direccion %> <br>
+<% end %>
+<% if @director.expedientes.empty? %> 
+ <p>Este director no tiene expedientes iniciados</p>
+ 
+
+<% end %>
+</br>
+
+<%= link_to "Atras", :action => :index %>

@@ -1,5 +1,6 @@
 class Director < ActiveRecord::Base
 	self.table_name = 'directores'
+	has_many :expedientes
 
 	#validación del director
 	validates :nombre, :presence => {:message =>"Debe ingresar un nombre"}

@@ -61,6 +61,12 @@ class DirectoresController < ApplicationController
     end
   end
 
+  def listar_expedientes
+    @director=Director.find(params[:id])
+    @expedientes=@director.expedientes
+    
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_director

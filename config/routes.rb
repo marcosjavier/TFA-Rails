@@ -11,14 +11,14 @@ Expedientes::Application.routes.draw do
     end
   end 
 
-  resources :directores
-
   
-
-
   resources :directores do
+    member do
+      get :listar_expedientes
+    end
     resources :expedientes
   end
+  resources :directores
   
   
   resources :alumnos do

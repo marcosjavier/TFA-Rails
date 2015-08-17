@@ -23,6 +23,7 @@
         <td><%= link_to 'Mostrar', director %></td>
         <td><%= link_to 'Editar', edit_director_path(director) %></td>
         <td><%= link_to 'Borrar', director, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> <%= link_to 'Expedientes', listar_expedientes_director_path(director)%></td>
       </tr>
     <% end %>
   </tbody>

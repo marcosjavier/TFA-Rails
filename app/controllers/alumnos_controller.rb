@@ -63,7 +63,7 @@ class AlumnosController < ApplicationController
     end
   end
 
-  #buscar un alumno cualquiera
+  #Listar los expedientes relacionados a un alumno cualquiera
   def listar_expedientes
     @alumno=Alumno.find params[:id]
     @expedientes=@alumno.expedientes
