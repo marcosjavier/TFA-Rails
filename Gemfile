@@ -49,3 +49,7 @@ end
 #gem 'bootstrap-sass','3.2.0.0'
 #gem 'bootstrap_form'
 #
+#gema faker para generar registros en la base de datos
+#require: false para que Bundler no cargue la gema en todos los procesos y sea llamada unicamente dentro del codigo que la va 
+#a utilizar usando require 'faker'
+gem 'faker', require: false
