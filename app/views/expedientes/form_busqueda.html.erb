@@ -1,11 +1,22 @@
 <h1>Busqueda de Expediente</h1>
-<p>Ingrese el numero de expediente a buscar</p>
+<p>Ingrese el número de expediente a buscar</p>
 <p></p>
-<%= form_tag :action => 'buscar_expediente' do %>
-
+<%= form_tag('expedientes/buscar_expediente', remote: true , :format => :js) do %>
+   
+  <%=label_tag 'Numero de Expediente', 'Buscar por Número de Expediente'%>
   <%=text_field_tag 'numero'%>
-  <%=submit_tag 'Enviar'%>
+  <%=submit_tag 'Enviar' , :id =>'boton_enviar'%>
+  
+  <div id="respuesta_ajax"  > </div>  
+
+  
+ 
+  
+  
+  
 <%end%>
+
+
 <br>
 <br>
 <%= link_to 'Atras', root_path %>

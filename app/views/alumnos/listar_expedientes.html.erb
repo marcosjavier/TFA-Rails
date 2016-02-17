@@ -1,16 +1,24 @@
 <h1>Expedientes iniciados por el Alumno:</h1>
 <%=@alumno.nombre %>
 <%=@alumno.apellido %> </br>
+ DNI:<%=@alumno.dni%></br>
 
-DNI:<%=@alumno.dni%></br>
 <% @expedientes.each do |expediente| %>
-  <%= expediente.id %> <br>
+<h2> Datos del Expediente  </h2>
+  Id: <%= expediente.id %> <br>
   Fecha: <%= expediente.fecha %> <br>
-  Alumno: <%= expediente.alumno.nombre %> <br>
-  Apellido:<%= expediente.alumno.apellido %> <br>
-  Dni:        <%= expediente.alumno.dni %> <br>
-  Telefono: <%= expediente.alumno.telefono %> <br>
-  Direccion: <%= expediente.alumno.direccion %> <br>
+  <h3>Alumno</h3>
+   <p>Alumno: <%= expediente.alumno.nombre %> <br> </p> 
+   <p>Apellido:<%= expediente.alumno.apellido %> <br> </p> 
+   <p>Dni:  <%= expediente.alumno.dni %> <br> </p>
+   <p>Telefono: <%= expediente.alumno.telefono %>  <br> </p>
+   <p>Direccion: <%= expediente.alumno.direccion %> <br> </p>
+
+  <h3>Director: </h3>
+   <p>Apellido: <%= expediente.director.apellido %> <br> </p>
+   <p>Nombre: <%= expediente.director.nombre %> <br> </p>
+   <p>Telefono: <%= expediente.director.telefono %> <br> </p>
+   <p>Direccion: <%= expediente.director.direccion %> <br> </p>
 <% end %>
 <% if @alumno.expedientes.empty? %> 
  <p>Este alumno no tiene expedientes iniciados</p>

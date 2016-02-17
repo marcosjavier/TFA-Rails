@@ -1,0 +1,23 @@
+<% if @expediente %> 
+     <p> <strong> Numero de expediente : </strong> <%=  @expediente.numero_expediente%>  </br>
+     <p> <strong> Fecha: </strong><%= @expediente.fecha%> </br>
+
+     <h2>Alumno</h2>
+     <p> <strong> Nombre del Alumno: </strong><%= @expediente.alumno.nombre %> </br>
+     <p> <strong> Apellido del Alumno : </strong><%= @expediente.alumno.apellido %> </br>
+     <p> <strong> Dni del Alumno : </strong><%= @expediente.alumno.dni %> </br>
+     <p> <strong> Telefono del Alumno : </strong><%= @expediente.alumno.telefono %> </p> </br> 
+     
+     <h2>Director</h2>
+     <p> <strong> Nombre del Director: </strong><%= @expediente.director.nombre %> </br>
+     <p> <strong> Apellido del Director : </strong><%= @expediente.director.apellido %> </br>
+     <p> <strong> Telefono del Director: </strong><%= @expediente.director.telefono %> </br>
+     <p> <strong> Dirección del Director : </strong><% @expediente.director.direccion%>
+
+   
+<% elsif params[:numero] == '' %>
+     <p>Ingrese un numero de Expediente</p>
+<% else %>
+    <p>El expediente no existe, vuelva a ingresar un número de expediente válido</p>      
+<% end%>
+  

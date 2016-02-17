@@ -1,12 +1,12 @@
+
 Expedientes::Application.routes.draw do
 
-  
   get 'form_busqueda', to: 'expedientes#form_busqueda'
   #get "wellcome/index"
   #resources :expedientes
   resources :expedientes do
     collection do
-      #get :buscar_expediente
+      get :buscar_expediente
       post :buscar_expediente
     end
   end 

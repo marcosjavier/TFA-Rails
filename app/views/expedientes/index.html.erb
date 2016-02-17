@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Id </th>
       <th>Fecha</th>
       <th>Numero de expediente</th>
       <th></th>
@@ -13,6 +14,7 @@
   <tbody>
     <% @expedientes.each do |expediente| %>
       <tr>
+        <td><%= expediente.id %></td>
         <td><%= format_fecha(expediente.fecha) %></td>
         <td><%= expediente.numero_expediente %></td>
         <td><%= link_to 'Mostrar', expediente %></td>

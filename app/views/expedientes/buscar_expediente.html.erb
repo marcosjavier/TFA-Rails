@@ -12,7 +12,8 @@
      <%= @expediente.director.apellido %> </br>
      <%= @expediente.director.telefono %> </br>
      <% @expediente.director.direccion%>
-     <%elsif params[:numero]%>
+   
+     <%else params[:numero]%>
        <p>el expediente no existe</p>      
   <%end%>
   

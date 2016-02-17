@@ -17,6 +17,7 @@ class AlumnosController < ApplicationController
   # GET /alumnos/new
   def new
     @alumno = Alumno.new
+    
   end
 
   # GET /alumnos/1/edit

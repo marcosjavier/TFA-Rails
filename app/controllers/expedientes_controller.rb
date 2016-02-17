@@ -16,8 +16,7 @@ class ExpedientesController < ApplicationController
 
   # GET /expedientes/new
   def new
-    @expediente = Expediente.new
-    
+    @expediente = Expediente.new    
     
     @expediente.build_alumno
     @expediente.build_director
@@ -36,9 +35,6 @@ class ExpedientesController < ApplicationController
     @expediente.fecha=fecha.strftime("%d-%m-%Y")
     
     
-
-    
-
     respond_to do |format|
       if @expediente.save
         format.html { redirect_to @expediente, notice: 'Expediente was successfully created.' }
@@ -82,7 +78,13 @@ class ExpedientesController < ApplicationController
   def buscar_expediente
 
      if params[:numero]
-      @expediente=Expediente.find_by(numero_expediente: params[:numero])
+      @expediente=Expediente.find_by numero_expediente: params[:numero]
+      logger.debug "ACAAAAAA hash: #{@expediente.inspect}"
+      #render :json
+
+      respond_to do |format|
+        format.js
+      end
      end
     #f params[:numero]
       #@expediente=Expediente.where("numero_expediente = ?", params[:numero])

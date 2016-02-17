@@ -5,7 +5,8 @@ class Expediente < ActiveRecord::Base
 	accepts_nested_attributes_for :alumno
 	accepts_nested_attributes_for :director
 
-	delegate :nombre, to: :alumno,  prefix: true, allow_nil: true
+
+	#delegate :nombre, to: :alumno,  prefix: true, allow_nil: true
 	
 	#que no guarde en la base de datos si no ingresa el alumno
 	#validates :alumno, presence: true
