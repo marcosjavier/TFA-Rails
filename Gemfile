@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.4'
+gem 'rails', '4.0.6'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -25,12 +25,14 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder', '~> 1.3'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+#If you are using Ruby 2.2.0 or greater, the json gem will not compile properly.
+#You can fix this by issuing bundle update json
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,10 +1,11 @@
-<h1>Editing expediente</h1>
+<h1>Editar Datos del Alumno y/o el Director en el Expediente</h1>
 
-<!-- la fecha se mantiene invariable pero puedo modificar los demas campos-->
-<%= @expediente.fecha %>
+<!-- la fecha y el numero de expedientes se mantienen invariables pero puedo modificar los demas campos-->
+<%= @expediente.fecha %> <br>
+<%= @expediente.numero_expediente %>
 
 
-<%= render 'form' %>
+<%= render 'form_edit' %>
 
-<%= link_to 'Show', @expediente %> |
-<%= link_to 'Back', expedientes_path %>
+<%= link_to 'Mostrar', @expediente %> |
+<%= link_to 'Atras', expedientes_path %>

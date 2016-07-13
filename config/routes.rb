@@ -1,8 +1,18 @@
 
 Expedientes::Application.routes.draw do
 
+  root 'sesiones#new'
+
+  get 'login', to: 'sesiones#new'
+  post 'login', to: 'sesiones#create'
+  
+  #pagina con todas las opciones
+  get 'wellcome/index', to: 'wellcome#index'
+
+  #busqueda de expediente por dni
   get 'form_busqueda', to: 'expedientes#form_busqueda'
-  #get "wellcome/index"
+  get 'form_busqueda_alu', to: 'alumnos#buscar_alumno'
+  
   #resources :expedientes
   resources :expedientes do
     collection do
@@ -33,7 +43,7 @@ Expedientes::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'wellcome#index'
+  #root 'wellcome#index'
 
 
   # Example of regular route:

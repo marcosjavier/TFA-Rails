@@ -66,10 +66,21 @@ class AlumnosController < ApplicationController
 
   #Listar los expedientes relacionados a un alumno cualquiera
   def listar_expedientes
-    @alumno=Alumno.find params[:id]
+    @alumno=Alumno.find params[:id] 
     @expedientes=@alumno.expedientes
+
     
     
+  end
+  
+  #buscar un alumno por dni
+  def buscar_alumno
+    if params[:numeroDni]
+      @alumno=Alumno.find_by dni: params[:numeroDni]
+      respond_to do |format|
+        format.js
+      end
+    end
   end
 
   private

@@ -6,6 +6,7 @@ class ExpedientesController < ApplicationController
   # GET /expedientes.json
   def index
     @expedientes = Expediente.all
+
   end
 
   # GET /expedientes/1
@@ -30,13 +31,19 @@ class ExpedientesController < ApplicationController
   # POST /expedientes
   # POST /expedientes.json
   def create
-    @expediente = Expediente.new(expediente_params)      
+    @expediente = Expediente.new(expediente_params)
     fecha=Date.current
     @expediente.fecha=fecha.strftime("%d-%m-%Y")
     
-    
+        
     respond_to do |format|
       if @expediente.save
+        
+        #numero de expediente formado por año + id del objeto
+        @expediente.numero_expediente = fecha.strftime("%Y")+ '-' +@expediente.id.to_s  
+        @expediente.save
+
+
         format.html { redirect_to @expediente, notice: 'Expediente was successfully created.' }
         format.json { render action: 'show', status: :created, location: @expediente }
       else
@@ -70,18 +77,14 @@ class ExpedientesController < ApplicationController
     end
   end
 
-  def form_busqueda
-    
-  end
+  
 
   
   def buscar_expediente
 
      if params[:numero]
       @expediente=Expediente.find_by numero_expediente: params[:numero]
-      logger.debug "ACAAAAAA hash: #{@expediente.inspect}"
-      #render :json
-
+      
       respond_to do |format|
         format.js
       end
@@ -93,9 +96,6 @@ class ExpedientesController < ApplicationController
     
   end
 
-  
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_expediente
@@ -104,7 +104,7 @@ class ExpedientesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expediente_params
-      params.require(:expediente).permit(:numero_expediente, :alumno_attributes =>[:nombre, :apellido, :dni,:telefono,:direccion],
+      params.require(:expediente).permit(:fecha, :numero_expediente, :alumno_attributes =>[:nombre, :apellido, :dni,:telefono,:direccion],
         :director_attributes =>[:nombre, :apellido, :dni, :telefono, :direccion])
     end
 end
