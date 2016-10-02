@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141027011226) do
+ActiveRecord::Schema.define(version: 20160925234705) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "alumnos", force: true do |t|
     t.string   "nombre"
@@ -19,7 +22,7 @@ ActiveRecord::Schema.define(version: 20141027011226) do
     t.integer  "dni"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "telefono"
+    t.integer  "telefono",   limit: 8
     t.string   "direccion"
   end
 
@@ -41,7 +44,7 @@ ActiveRecord::Schema.define(version: 20141027011226) do
     t.string   "numero_expediente"
   end
 
-  add_index "expedientes", ["alumno_id"], name: "index_expedientes_on_alumno_id"
-  add_index "expedientes", ["director_id"], name: "index_expedientes_on_director_id"
+  add_index "expedientes", ["alumno_id"], name: "index_expedientes_on_alumno_id", using: :btree
+  add_index "expedientes", ["director_id"], name: "index_expedientes_on_director_id", using: :btree
 
 end

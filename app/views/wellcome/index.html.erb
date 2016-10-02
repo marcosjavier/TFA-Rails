@@ -2,21 +2,16 @@
 <p><h1>Bienvenido a la Aplicación</h1></p>
 <p><h2>Extension Universitaria</h2></p>
 <p> <h3>Sistema de manejo de pasantías </h3> </p>
-<table>
-	<tr>
-		<td><%= link_to 'Agregar Expediente', new_expediente_path  %></td>
-		<td>
-			<%= link_to 'Buscar expediente', form_busqueda_path %>
-		</td>
-		<td><%= link_to 'Mostrar  Expedientes', expedientes_path %></td>
+  <div class="container" >
+    <div class="row">
+	  <div class="col-xs-2"> <%= link_to 'Agregar Expediente', new_expediente_path %>  </div> 
+	  <div class="col-xs-2"> <%= link_to 'Buscar expediente', form_busqueda_path %> </div>
+	  <div class="col-xs-2"> <%= link_to 'Mostrar  Expedientes', expedientes_path %> </div>
+	  <div class="col-xs-2"> <%= link_to 'Alumnos', alumnos_path %> </div>
+	  <div class="col-xs-2"> <%= link_to 'Directores', directores_path %></div>
+    </div>
+  </div>
 
-		<td><%= link_to 'Alumnos', alumnos_path %></td>
 
-		
-	
-		<td><%= link_to 'Directores', directores_path %></td>
-		
-	</tr>
-</table>
 
 

@@ -1,9 +1,9 @@
 <h1><p> Ingrese dni para logearse </p> </h1>
-<%=form_tag('/login') do %>
-  <%= label_tag ("DNI:")%>
-  <%= text_field_tag('dni') %>
+<%=form_for(:sesiones, url:login_path) do |f| %>
+  <%= f.text_field :dni %>
+  
 
-  <%=submit_tag("Buscar") %>
+  <%=f.submit "Buscar" %>
 
   
 <% end %>
