@@ -65,3 +65,5 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 #gem 'sass', '~> 3.4', '>= 3.4.22'
 
 gem "better_errors"
+
+gem 'rails_12factor', group: :production
