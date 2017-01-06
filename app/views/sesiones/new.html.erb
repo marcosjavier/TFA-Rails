@@ -1,9 +1,15 @@
-<h1><p> Ingrese dni para logearse </p> </h1>
-<%=form_for(:sesiones, url:login_path) do |f| %>
-  <%= f.text_field :dni %>
-  
+<div class="row">
+	<div class="col-md-6 col-md-offset-3">
+ 		<%=form_for(:sesiones, url:login_path) do |f| %>
+  		<h2 class="form-signin-heading">Inicie Sesion</h2>
 
-  <%=f.submit "Buscar" %>
+  		<%= f.text_field :dni, class: "form-control", placeholder: 'D N I' %>
+  		<br>
+  		<br>
+    
+  		<%=f.submit "buscar", class: "btn btn-lg btn-primary btn-block" %>    
 
   
-<% end %>
+		<% end %>
+	</div>
+</div>

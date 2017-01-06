@@ -1,0 +1,7 @@
+<%= form_tag('alumnos/buscar_alumno', remote: true, :format => :js) do %>
+  <%=label_tag 'Numero de dni', 'Buscar por Número de dni'%>
+  <%=text_field_tag 'numeroDni'%>
+  <%=submit_tag 'buscar' , :id =>'boton_buscar'%>
+  <div id="respuesta_ajax"  > </div>  
+
+<% end%>

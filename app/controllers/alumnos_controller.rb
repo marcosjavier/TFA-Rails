@@ -1,5 +1,6 @@
 class AlumnosController < ApplicationController
   before_action :set_alumno, only: [:show, :edit, :update, :destroy]
+  before_action :require_user
 
   # GET /alumnos
   # GET /alumnos.json
@@ -78,6 +79,7 @@ class AlumnosController < ApplicationController
     if params[:numeroDni]
       @alumno=Alumno.find_by dni: params[:numeroDni]
       respond_to do |format|
+        format.html
         format.js
       end
     end

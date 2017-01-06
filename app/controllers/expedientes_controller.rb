@@ -1,5 +1,6 @@
 class ExpedientesController < ApplicationController
   # skip_before_action :set_expediente, only: [:]
+  before_action :require_user
   before_action :set_expediente, only: [:show, :edit, :update, :destroy]
 
   # GET /expedientes

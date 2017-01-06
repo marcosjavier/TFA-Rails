@@ -1,13 +1,20 @@
 
 Expedientes::Application.routes.draw do
 
-  root 'sesiones#new'
+
+  resources :users
+  #pagina con todas las opciones
+  root 'wellcome#index'
+
+ 
+
+  #root 'sesiones#new'
 
   get 'login', to: 'sesiones#new'
   post 'login', to: 'sesiones#create'
+  get 'destroy', to: 'sesiones#destroy', as: :logout
   
-  #pagina con todas las opciones
-  get 'wellcome/index', to: 'wellcome#index'
+  
 
   #busqueda de expediente por dni
   get 'form_busqueda', to: 'expedientes#form_busqueda'

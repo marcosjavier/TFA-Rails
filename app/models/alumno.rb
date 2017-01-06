@@ -1,4 +1,4 @@
-	class Alumno < ActiveRecord::Base
+class Alumno < ActiveRecord::Base
 	
 	# dependent: evita que pueda borrar un alumno que esté relacionado con un expediente
 	
@@ -10,4 +10,6 @@
 	validates :dni, :presence => {:message =>"Debe ingresar un dni"}, length: { in: 7..9}
 	validates :telefono, :presence => {:message =>"Debe ingresar un telefono"}, numericality: { only_integer: true }
 	validates :direccion, :presence => {:message =>"Debe ingresar una direccion"}
+
+	
 end

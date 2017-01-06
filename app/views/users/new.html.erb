@@ -1,0 +1,25 @@
+
+
+
+	
+    <%= form_for(@user) do |f| %>
+      <form>
+	  <div class="form-group">
+		<%=f.label(:dni, "DNI")%>
+		<%= f.text_field(:dni, class: 'form-control', placeholder: 'DNI')%>
+	  </div>
+	  <div class="form-group">
+		<%=f.label(:name, "NOMBRE")%>
+		<%= f.text_field(:name, class: 'form-control', placeholder: 'NOMBRE')%>
+
+	  </div>
+	  <div class="form-group">
+		<%=f.label(:surname, "APELLIDO")%>
+		<%= f.text_field(:surname, class: 'form-control', placeholder: 'APELLIDO')%>
+
+	  </div>
+
+	  <%= f.submit "Guardar Usuario" %>
+	  </form>
+<% end%>
+

@@ -1,4 +1,5 @@
 class DirectoresController < ApplicationController
+  before_action :require_user
   before_action :set_director, only: [:show, :edit, :update, :destroy]
 
   # GET /directores
