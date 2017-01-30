@@ -18,7 +18,7 @@ Expedientes::Application.routes.draw do
 
   #busqueda de expediente por dni
   get 'form_busqueda', to: 'expedientes#form_busqueda'
-  get 'form_busqueda_alu', to: 'alumnos#buscar_alumno'
+  #get 'form_busqueda_alu', to: 'alumnos#buscar_alumno'
   
   #resources :expedientes
   resources :expedientes do
@@ -41,6 +41,10 @@ Expedientes::Application.routes.draw do
   resources :alumnos do
     member do 
       get :listar_expedientes
+    end
+    collection do
+      get :buscar_alumno
+      post :buscar_alumno
     end
     resources :expedientes
   end

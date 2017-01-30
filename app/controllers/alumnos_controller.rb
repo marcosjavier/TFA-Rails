@@ -78,8 +78,9 @@ class AlumnosController < ApplicationController
   def buscar_alumno
     if params[:numeroDni]
       @alumno=Alumno.find_by dni: params[:numeroDni]
-      respond_to do |format|
-        format.html
+      logger.debug "user_sesion #{@alumno.id}"
+
+      respond_to do |format|        
         format.js
       end
     end
